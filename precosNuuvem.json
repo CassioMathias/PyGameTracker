@@ -1,0 +1,46 @@
+{
+    "jogoProcurado": "elden ring",
+    "plataforma": "Nuuvem",
+    "requestItens": [
+        {
+            "nome": "Elden Ring Shadow of the Erdtree Edition",
+            "preco": "328,00",
+            "tipo": "JOGO"
+        },
+        {
+            "nome": "ELDEN RING NIGHTREIGN - Deluxe Edition",
+            "preco": "244,00",
+            "tipo": "JOGO"
+        },
+        {
+            "nome": "Elden Ring Shadow of the Erdtree Deluxe Edition",
+            "preco": "411,00",
+            "tipo": "JOGO"
+        },
+        {
+            "nome": "ELDEN RING NIGHTREIGN",
+            "preco": "178,00",
+            "tipo": "JOGO"
+        },
+        {
+            "nome": "Elden Ring",
+            "preco": "274,50",
+            "tipo": "JOGO"
+        },
+        {
+            "nome": "DLC ELDEN RING NIGHTREIGN - The Forsaken Hollows",
+            "preco": "67,99",
+            "tipo": "DLC"
+        },
+        {
+            "nome": "DLC Elden Ring Shadow of the Erdtree",
+            "preco": "182,90",
+            "tipo": "DLC"
+        },
+        {
+            "nome": "DLC Elden Ring Shadow of the Erdtree Premium Bundle",
+            "preco": "205,00",
+            "tipo": "DLC"
+        }
+    ]
+}
