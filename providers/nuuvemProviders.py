@@ -2,59 +2,69 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-jogoProcurado = "elden ring"
+# print("Qual jogo deseja buscar?")
+# jogoProcurado = input()
 
-dados = {
-        "jogoProcurado": jogoProcurado,
-        "plataforma": "Nuuvem",
-        "requestItens": []
-        }
+def buscarNuuvem(jogoProcurado):
 
-procuraUrl = jogoProcurado.replace(" ", "%20")
+    procuraUrl = jogoProcurado.replace(" ", "%20")
 
-url = "https://www.nuuvem.com/br-pt/catalog/search/" + procuraUrl
+    url = "https://www.nuuvem.com/br-pt/catalog/search/" + procuraUrl
 
-response = requests.get(url)
+    response = requests.get(url)
 
-html = response.text
+    html = response.text
 
-soup = BeautifulSoup(html, "html.parser")
+    soup = BeautifulSoup(html, "html.parser")
 
-cardGames = soup.find_all("div", class_="game-card__content")
+    dados = {
+            "jogoProcurado": jogoProcurado,
+            "plataforma": "Nuuvem",
+            "requestItens": []
+            }
 
-for cardGame in cardGames:
+    cardGames = soup.find_all("div", class_="game-card__content")
 
-    gameName = cardGame.find("h3", class_="game-card__product-name")
-    gameName = gameName.get_text(separator=" ", strip=True)
-    
-    if "dlc" in gameName.lower():
-        gameType = "DLC"
-    elif "pacote" in gameName.lower():
-        gameType = "PACOTE"
-    else:
-        gameType = "JOGO"
+    for cardGame in cardGames:
 
-    if any(platIndesejada in gameName.lower() for platIndesejada in ["xbox", "playstation"]):
-        continue
+        gameName = cardGame.find("h3", class_="game-card__product-name")
+        gameName = gameName.get_text(separator=" ", strip=True)
 
-    if jogoProcurado.lower() not in gameName.lower():
-        continue
+        if not gameName:
+            continue
+        
+        if "dlc" in gameName.lower():
+            gameType = "DLC"
+        elif "pacote" in gameName.lower():
+            gameType = "PACOTE"
+        else:
+            gameType = "JOGO"
 
-    priceInteger = cardGame.find("span", class_="integer")
-    priceInteger = priceInteger.text.strip()
-    priceDecimal = cardGame.find("span", class_="decimal")
-    priceDecimal = priceDecimal.text.strip()
+        if any(platIndesejada in gameName.lower() for platIndesejada in ["xbox", "playstation"]):
+            continue
 
-    gamePrice = priceInteger + priceDecimal
+        if jogoProcurado.lower() not in gameName.lower():
+            continue
 
-    requestItem = {
-    "nome": gameName,
-    "preco": gamePrice,
-    "tipo": gameType
-}
-    dados["requestItens"].append(requestItem)
+        priceInteger = cardGame.find("span", class_="integer")
+        if not priceInteger:
+            continue
+        priceInteger = priceInteger.text.strip()
+        priceDecimal = cardGame.find("span", class_="decimal")
+        if not priceDecimal:
+            continue
+        priceDecimal = priceDecimal.text.strip()
 
-with open("precosNuuvem.json", "w", encoding="utf-8") as arquivo:
-    json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+        gamePrice = priceInteger + priceDecimal
 
-print("Busca concluída!")
+        requestItem = {
+        "nome": gameName,
+        "preco": gamePrice,
+        "tipo": gameType
+    }
+        dados["requestItens"].append(requestItem)
+
+    with open("precosNuuvem.json", "w", encoding="utf-8") as arquivo:
+        json.dump(dados, arquivo, indent=4, ensure_ascii=False)
+
+    return("Busca concluída!")

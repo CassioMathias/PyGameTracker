@@ -1,0 +1,78 @@
+{
+    "jogoProcurado": "elden ring",
+    "plataforma": "PlayStation Store",
+    "requestItens": [
+        {
+            "nome": "ELDEN RING Shadow of the Erdtree Premium Bundle PS4 & PS5",
+            "preco": "R$284,90",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Edição premium"
+        },
+        {
+            "nome": "ELDEN RING Shadow of the Erdtree PS4 & PS5",
+            "preco": "R$214,90",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Mapa"
+        },
+        {
+            "nome": "ELDEN RING PS4 & PS5",
+            "preco": "R$299,90",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Jogo Base"
+        },
+        {
+            "nome": "ELDEN RING NIGHTREIGN The Forsaken Hollows",
+            "preco": "R$75,00",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Expansão"
+        },
+        {
+            "nome": "ELDEN RING Shadow of the Erdtree Deluxe Edition PS4 & PS5",
+            "preco": "R$569,90",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Edição premium"
+        },
+        {
+            "nome": "ELDEN RING Shadow of the Erdtree Edition PS4 & PS5",
+            "preco": "R$455,90",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Pacote do jogo"
+        },
+        {
+            "nome": "ELDEN RING NIGHTREIGN PS4 e PS5",
+            "preco": "R$229,90",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Jogo Base"
+        },
+        {
+            "nome": "ELDEN RING NIGHTREIGN Deluxe Edition PS4 e PS5",
+            "preco": "R$313,50",
+            "plataforma": [
+                "PS5",
+                "PS4"
+            ],
+            "tipo": "Edição premium"
+        }
+    ]
+}
